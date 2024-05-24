@@ -1,0 +1,61 @@
+<div class="parent">
+  <div fxLayout="row" fxLayoutAlign="space-between center" fxLayout.xs="column">
+    <div class="org-title">{{ displayText }}</div>
+
+    <div
+      fxLayout="column"
+      fxLayoutAlign="space-between start"
+      class="login-card">
+
+      <div class="title mb-4">Sign Up</div>
+      <form
+        name="signUpForm"
+        [formGroup]="signUpForm"
+        novalidate
+        fxLayout="column"
+      >
+        <div class="input-field-title">Name</div>
+        <div>
+          <input
+            [ngStyle]="{ width: '50vw' }"
+            class="input-field"
+            name="name"
+            placeholder="Enter Name"
+            matInput
+            formControlName="name"
+          />
+        </div>
+        <div class="input-field-title">Password</div>
+        <div>
+          <input
+            [ngStyle]="{ width: '50vw' }"
+            class="input-field"
+            name="password"
+            type="password"
+            placeholder="Enter Password"
+            matInput
+            formControlName="password"
+          />
+        </div>
+        <div class="input-field-title">Re-enter Password</div>
+        <div>
+          <input
+            [ngStyle]="{ width: '50vw' }"
+            class="input-field"
+            name="confirmpassword"
+            type="password"
+            placeholder="Re-enter Password"
+            matInput
+            formControlName="confirmpassword"
+          />
+        </div>
+
+        <a [routerLink]="[ '/auth','login']" class="open-account-text">
+          Already have an account? Log in!
+        </a>
+
+        <button class="mt-4" mat-raised-button color="primary">Sign Up</button>
+      </form>
+    </div>
+  </div>
+</div>
